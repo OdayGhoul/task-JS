@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<!--     
+/*
+ 8
+Create a function called middleOfArray
+that take an array as a parameter
+and return the middle element in an array if it is have an odd elemnets
+and return the two middle elemnt in an array if it is have an even elemnets
+
+Ex: middleOfArray([1,4,5]) => 4
+Ex: middleOfArray(["t","u","g","x"]) =>"u and g"
+*/ -->
+ 
+
+<script>
+ 
+ let x =[1,8,5,6,4,7,55 ];
+ middleOfArray(x);
+
+
+function middleOfArray(a){
+    if(a.length%2==0){
+    z=((a.length)/2)
+    n=z-1
+    document.write(a[z] +" , ");
+    document.write(a[n])
+    }
+
+    else{
+           y= (a.length/2 ) -.5
+           document.write(a[y])       
+    }
+    
+
+}
+
+
+</script>
+    
+</body>
+</html>

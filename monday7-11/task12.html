@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- Write a function called smallerNubmer
+that accept three numbers as arguments,
+and return the first smaller number
+
+Ex: smallerNubmer(8,6,7)
+=> 6
+
+Ex: smallerNubmer(5,99,34)
+=> 5
+
+Ex: smallerNubmer(5,99,3)
+=> 3
+
+Ex: smallerNubmer(5,3,3)
+=> 3
+ -->
+
+<script>
+
+ let a =prompt("enter first number");
+ let b =prompt("enter second number");
+ let c =prompt("enter third number");
+ smallerNubmer(a,b,c);
+
+//  function smallerNubmer(x,y,z){
+
+//             if(x<y && X<z){
+//             document.write(x);
+//         }   
+//             else if(y<x && y<Z){
+//             }  document.write(y);
+            
+//              else if(z<x && z<Y)
+//              document.write(z);
+             
+//              else
+//               document.write("go back");
+
+//  }
+
+ function smallerNubmer(x,y,z){
+
+document.write(Math.min(x,y,z));
+ }
+
+</script>
+
+
+</body>
+</html>

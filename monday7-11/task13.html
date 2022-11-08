@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Write a function called shorterString
+    that accept five string as an arguments,
+    and return the first shorter string
+    
+    Ex: shorterString("air","school","car","by","github")
+    => by
+    
+    Ex: shorterString("air","tr","car","by","github")
+    => tr
+    
+    Ex: shorterString("by","tr","car","air","github")
+    => by
+    
+    Ex: shorterString("air","by","car","school","github")
+    => by
+    
+    Ex: shorterString("air","tr","by","car","github")
+    => by
+    
+    Ex: shorterString("air","tr","car","github","by")
+    => by -->
+
+    <script>
+        
+       
+        shorterString("air","school","car","by","github");
+       shorterString ("air","tr","car","by","github");
+
+       function shorterString(a,b,c,e,f){
+        // let o = a.length;
+        // let d = b.length;
+        // let g = c.length;
+        // let h = e.length;
+        // let r = f.length;
+
+        if( a.length<=b.length&& a.length<=c.length && a.length<=e.length && a.length<=f.length){
+
+                 document.write(a);
+        }
+        else if (b.length<=a.length&& b.length<=c.length && b.length<=e.length && b.length<=f.length){
+              document.write(b);
+        }
+        else if (c.length<=b.length&& c.length<=a.length && c.length<=e.length && c.length<=f.length){
+            document.write(c);
+        }
+        else if (e.length<=b.length&& e.length<=c.length && e.length<=a.length && e.length<=f.length){
+            document.write(e);
+        }
+        else{
+            document.write(f);
+        }
+        
+
+       }
+        
+    </script>
+
+
+</body>
+</html>

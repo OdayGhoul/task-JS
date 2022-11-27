@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profileCoach</title>
+    <style>
+        .container-for-personal{
+            display: flex;
+            justify-content: space-around;
+        }
+        #current-name{
+            margin-left: 50px;
+        }
+        #current-email{
+            margin-left: 50px;
+        }
+        #current-mobile{
+            margin-left: 43px;
+        }
+        #writeBioHere{
+            width: 500px;
+            height: 100px;
+        }
+        #bio{
+            font-weight: bold;
+            font-size: 35px;
+        }
+        #coach-bio{
+            font-size: 18px;
+        }
+        #profile-pic-mona, #profile-pic-alaa {
+            width: 200px;
+            height: 200px;
+        }
+        #profile-pic-alaa{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="goToFeedback()">Go to feedback</button>
+    <div class="container-for-personal" id="coach-mona-card">
+        <img id="profile-pic-mona" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png">
+        <img id="profile-pic-alaa" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png">
+        <div id="personal-information">
+           <p class="titleForInfo">Name of Coach :<span id="current-name">name</span> </p>
+           <p class="titleForInfo">Email of Coach :<span id="current-email">email</span> </p>
+           <p class="titleForInfo">Mobile of Coach :<span id="current-mobile">mobile</span> </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div id="bio">Bio :</div>
+    <div id="coach-bio"></div>
+    <br>
+    <br>
+    <button id="clickToEditBio" onclick="openTxtArea()">Edit Bio</button>
+    <div id="addTxtBio" style="display: none;">
+        <textarea id="writeBioHere" value="" placeholder="write something about you . . ."></textarea>
+        <br>
+        <button id="clickToUpdate" onclick="editTxtBio()">Update</button>
+    </div>
+    
+
+    
+    <script src="./profileCoach.js"></script>
+</body>
+</html>

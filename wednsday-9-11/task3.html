@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <select id="aa" onchange="load('aa')">
+        <option value="" >Select</option>
+        <option value="usa.jpg">usa</option>
+        <option value="france.png" >france</option>
+        <option value="italy.png" >italy</option>
+
+    </select>
+    <br><br><br><br>
+    <img id="az" src="" alt="">
+
+
+    <script>
+        function load(y){
+    var x= document.getElementById(y).value;
+    console.log(x);
+    document.getElementById('az').src=x;
+       }
+
+    </script>
+  
+
+
+</body>
+</html>

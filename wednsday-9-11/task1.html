@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        .main{
+            border:2px solid ;
+            background-color: chartreuse;
+            text-align: center;
+            padding-top: 30px;
+            height: 50px;
+            width: 300px;
+        }
+     
+    
+    </style>
+      
+     <div class="main" >Hello world</div>
+     
+     
+    
+      <script>
+        let main=document.getElementsByClassName("main");
+          main[0].addEventListener("click",dusu)
+           
+          function dusu(){
+            main[0].style.background="red"
+            main[0].innerHTML="oday" 
+          }
+    
+    
+      </script>
+    
+</body>
+</html>

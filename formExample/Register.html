@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <style>
+        #form{
+            height:200px ;
+            width: 150px;
+            margin-left: 600px;
+            margin-top: 200px;
+            
+        }
+    </style>
+
+
+
+
+     
+    <form id="form">
+        <label>user name</label>
+        <input type="text" id="tex">
+        <label>email</label>
+        <input type="email" id="em" >
+        <label>password</label>
+        <input type="password" id="pass">
+        <label> phone number</label>
+        <input type="text" id="num">
+        <button id="btn">submit</button>
+    </form>
+
+
+        <script>
+            let form=document.getElementById("form")
+
+            let user=document.getElementById("tex")
+            let email=document.getElementById("em")
+            let password=document.getElementById("pass")
+            let phone=document.getElementById("num")
+            let submit=document.getElementById("btn")
+
+                    //   to keep info saved
+            let users = JSON.parse(localStorage.getItem("users")) || []
+            form.addEventListener('submit', func)
+        
+            function func(e){
+                console.log('hello')
+                e.preventDefault();
+                let userd =  {
+                    name: user.value,
+                    password: password.value,
+                    email:email.value,
+                    phone:phone.value,
+
+                };
+
+                 users.push(userd)
+                 console.log(users)
+                 localStorage.setItem("userdata", JSON.stringify(users))
+
+                
+
+            }
+
+
+        </script>  -->
+
+
+<!--       
+        <script>
+
+            let form =document.getElementById("form")
+            let user=document.getElementById("tex")
+            let email=document.getElementById("em")
+            let password=document.getElementById("pass")
+            let num=document.getElementById("num")
+            let submit=document.getElementById("btn")
+
+
+
+
+
+       </script>
+ -->
+
+</body>
+</html>

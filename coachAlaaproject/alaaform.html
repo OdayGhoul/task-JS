@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        form{
+            border: solid black 1px;
+            padding: 15px;
+        }
+
+        table,td{
+            border: solid red 1px;
+        }
+        
+    </style>
+    <form>
+        <label>customer name</label>
+        <input type="text" id="name" >
+        <label>your order</label>
+        <select name="food" id="yourorder" onchange="dusu('yourorder')">
+            <option value="dessert">dessert</option>
+            <option value="mainCo">mainCo</option>
+            <option value="apptizer">apptizer</option>  
+        </select>
+        <button onclick="ask()">ask for cheif</button>
+
+     </form>
+     <br><br>
+        
+     <button>remove table content</button>
+     <button>Delete localStorge content</button>
+     <br><br>
+
+     <table>
+     <th>
+        <td>order image</td>
+        <td>customer name</td>
+        <td>food type</td>
+        <td>payment</td>
+     </th>
+     <tbody id="body">
+
+     </tbody>
+
+    </table>
+    
+
+<script>
+let array=(JSON.parse(localStorage.getItem("ORDER")))||[];
+let obj={};
+let order;
+let name ;
+function dusu(yourorder){
+    order =document.getElementById(yourorder);
+ }
+function ask(){
+
+name =document.getElementById("name").value;
+ console.log(name);
+ 
+
+obj={
+    name: name,
+    yourOrder:order,
+}
+array.push(obj);
+console.log(array)
+localStorage.setItem("ORDER",JSON.stringify(array))
+showData()
+event.preventDefault();
+
+}
+     let table='';
+    function showData(){
+        let img,price;
+
+            
+           if(order=JSON.parse(localStorage.getItem("ORDER"). yourOrder)) 
+           {
+            console.log("jjj");
+            img=`<img src="1.jpg">`
+            price="18";
+           }  
+            for(i=0;i<array.length;i++){
+                
+           table+= `  <tr>
+                <td>${img}</td> 
+                <td>${JSON.parse(localStorage.getItem(ORDER).name[i])}</td> 
+                <td>${JSON.parse(localStorage.getItem(ORDER).name[i])}</td> 
+                <td>${price}</td> 
+                </tr>`      
+            }
+    document.getElementById("body").innerHTML=table;
+
+    }
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+    
+
+
+
+
+<!-- //-----------------------------------------------------------
+let users =JSON.parse(localStorage.getItem("users"))
+
+users.map(ele => {
+    document.getElementById(`name`).innerHTML=ele.name
+    document.getElementById(`email`).innerHTML=ele.mail
+
+})
+
+//------------------------------------------------------------
+let arr = JSON.parse(localStorage.getItem('array')) 
+
+   let array = arr || []
+
+// ------------------------------------------------
+let btn=document.querySelector("#saveData")
+btn.addEventListener("click", save)
+let name = document.getElementById("inputName").value
+
+function save(event){
+
+let name = document.getElementById('inputName').value
+let select = document.getElementById(`select`).value
+console.log(name)
+    if(select==="dessert"){
+        a="desseret"
+        x="./dessertFood.jpg";
+        z=7
+    }
+    if(select==="mainCo"){
+        a="mainCo"
+        x="./seaFood.jpg";
+        z=18
+    }
+    if(select==="aptizer"){
+        a="aptizer"
+        x="./aptizerFood.jpg";
+        z=10
+    }
+    let obj ={
+    
+       'orderImage'  : x,
+        'customerName': name,
+        'foodType':a,
+        'payment':z
+    }
+    console.log(arr)
+    array.push(obj)
+    console.log(array)
+    console.log(obj)
+localStorage.setItem("array",JSON.stringify(array))
+
+printData()
+     event.preventDefault()
+}
+
+function printData(){
+
+let table1 = '<table border=2>';
+    table1 += '<tr><th>order image</th><th>customer name</th><th>food type</th><th>payment</th></tr>';
+    array.map( ele => {
+        var image = ele.orderImage;
+        var namee = ele.customerName;
+        var foodType = ele.foodType;
+        var payment = ele.payment;
+ 
+        table1 = table1 + '<tr>',
+        table1 = table1 + '<td>'+ `<img src=${image} style="width:150px ;">` + '</td>',
+        table1 = table1 + '<td>' + `${namee}` + '</td>',
+        table1 = table1 + '<td>' + `${foodType}` + '</td>'
+        table1 = table1 + '<td>'  + `${payment}` + '</td>'
+     });  
+     table1 += "</table>"
+
+     
+     document.getElementById("list").innerHTML = table1;
+
+
+}
+//----------------------------------------------
+// remove data in body
+let btnRemove=document.getElementById(`remove`)
+btnRemove.addEventListener(`click`,removetable)
+
+function removetable(){
+
+    document.getElementById("list").innerHTML = "";
+console.log(array)
+
+}
+// //----------------------------------------------
+
+// delete data in local storage
+let removeLocal=document.getElementById(`delete`)
+removeLocal.addEventListener(`click`,deleteLocal)
+
+function deleteLocal(){
+    localStorage.removeItem('array')
+    document.getElementById("list").innerHTML = "";
+
+
+
+}
+//---------------------------------------------- -->

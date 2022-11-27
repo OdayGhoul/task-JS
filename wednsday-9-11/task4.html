@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+ #main{
+    height: 150px;
+    width: 200px;
+    border: solid black 2px;
+    text-decoration: underline;
+    
+ }
+ 
+
+</style>
+
+<body>
+ 
+ <select  id="fonttype" onchange="change()">
+ <option value="Arial">arial</option>
+ <option value="Impact">impact</option>
+ <option value="Times New Roman">time new roman</option>
+ </select>
+
+ <select  id="sizefont"onchange="change()">
+    <option value="10px">10</option>
+    <option value="20px">20</option>
+    <option value="30px">30</option>
+    </select>
+
+    <label>italic</label>
+    <input id="iitalic" type="checkbox"onchange="change()" > 
+    <label>bold</label>
+    <input id="bbold" type="checkbox"onchange="change()">  
+    <label>under line</label>
+    <input id="uunderline" type="checkbox"onchange="change()">  
+    <br><br><br>   
+
+
+
+    <div id="main" ><p>hello to our life</p></div>
+
+
+<script>
+    function change()
+    {
+        let x = document.getElementById("fonttype").value
+        let y = document.getElementById("main")
+        y.style.fontFamily=x 
+
+        let a =document.getElementById("sizefont").value
+        y.style.fontSize=a
+
+        let z =document.getElementById("iitalic")
+        if(z.checked==true){
+        y.style.fontStyle="italic"}
+        else{
+            y.style.fontStyle="normal";
+        }
+        let b =document.getElementById("bbold")
+        if(b.checked==true){
+            y.style.fontWeight="bold"
+        }
+        else{
+            y.style.fontWeight="normal";
+
+        }
+        
+        let u =document.getElementById("uunderline")
+        if(u.checked==true){
+            y.style.textDecoration="underline"
+        }
+        else{
+            y.style.textDecoration="none"
+        }
+    }
+</script>
+
+
+
+</body>
+</html>

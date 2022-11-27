@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        #you-can-change-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        #you-can-change-M, #you-can-change-A {
+            margin-top: 50px;
+        }
+        #M-give-me-feedback{
+            width: 400px;
+            height: 200px;
+        }
+        #A-give-me-feedback{
+            width: 400px;
+            height: 200px;
+        }
+        .trash {
+            color: red;
+            font-size: 18px;
+            margin-left: 15%;
+        }
+    </style>
+</head>
+<body>
+    <select id="select" value="" onchange="setData()">
+        <option value="first-select">Select</option>
+        <option id="1" value="0" class="student">ID 1 : Abdelmajied Akram</option>
+        <option id="2" value="1" class="student">ID 2 : Abrar Alhilawy</option>
+        <option id="3" value="2" class="student">ID 3 : Ahmad Zytoon</option>
+        <option id="4" value="3" class="student">ID 4 : Amroo Al-Wageei</option>
+    </select>
+    <button id="add-student" onclick="addNewStudent()">Add New Student</button>
+    <br>
+    <br>
+    <div id="tableForNew"></div>
+    <br>
+    <br>
+    <div id="tableContainer"></div>
+    <div id="you-can-change-container">
+        <div  id="you-can-change-M">
+            <p>Coach Mona, give a feedback :</p>
+            <textarea type="text" value="" id="M-give-me-feedback" placeholder="Give a feedback"></textarea>
+            <button id="send-M-feedback" onclick ='sendMfeedback()'>Send FeedBack</button>
+        </div>
+        <div id="you-can-change-A">
+            <p>Coach Aladdin, give a feedback :</p>
+            <textarea type="text" value="" id="A-give-me-feedback" placeholder="Give a feedback"></textarea>
+            <button id="send-A-feedback" onclick ='sendAfeedback()'>Send FeedBack</button>
+        </div>
+    </div> 
+    <script src="./LastPage.js"></script>
+</body>
+</html>

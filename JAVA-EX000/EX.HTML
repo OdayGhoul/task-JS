@@ -5,59 +5,392 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<!-- 
+    <style>
+        #main{ 
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button{
+            background-color: blue;
+            color: aliceblue;
+        }
+    </style>
 </head>
 <body>
 
 
 
+    <div id="main" >
+        <button class="button" >click me</button>
+    </div>
 
 
+<script>
+    let main = document.getElementById("main")
+    let button =document.getElementsByClassName("button")
+    button[0].addEventListener("click",dousu)
 
-<SCript>
-
-let person ={
-  
-    age:18,
-    name:"oday"
-
-
-
-
-};
-
-document.write(person.age);
-document.write(person.name);
-
-
-
-
-
-</SCript>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    function dousu(){
+       
+        main.style.background="red"
+        
+    }
+</script>
+ -->
 
     
+
+ <!-- <script>
+
+     let x = prompt("enter the first number")
+     let y = prompt("enter the second number")
+     let z = prompt("entir the third number")
+
+     if(x<y && x<z ){
+        if(y<z)
+        document.write(x,y,z);
+        else(document.write(x,z,y))
+     }
+     else if(y<x && y<z){
+        if (x<z)
+        document.write(y,x,z)
+        else(document.write(y,z,x))
+     }
+     else if(document.write(z,y,x)){
+        if (y<x)
+        document.write(z,y,x)
+        else(document.write(z,x,y))
+
+     }
+
+
+ </script>
+ -->
+
+   <!-- <script>
+
+    let x =prompt("enter the number")
+
+    if(x==0){
+        document.write("looser")
+
+    }
+    else if(x==1){
+        document.write("win")
+    }
+    else(document.write("try again"))
+
+
+
+   </script> -->
+
+<!-- 
+<script>
+    let x= prompt("enter the number:")
+    switch(x){
+         case "1":
+            {
+                document.write("sutrday");
+                break ;
+            }
+         case "2":
+            {
+                document.write("monday");
+                break ;
+
+            }
+           case "3": {
+            document.write("Tusday");
+            break  ;
+           }
+
+           default :
+           {
+             document.write("go back");
+           }
+    }
+
+</script>             -->
+
+
+
+
+
+<!-- 
+<script>
+ for(let x =0; x<10 ; x++){
+    document.write("hello" );
+     document.write ("</br>");
+
+ }
+    
+</script> -->
+
+<!-- <script>
+let x ;
+for(x=1; x<=100; x++  ){
+  
+     if( x%2==0  ){
+        document.write(x)
+        document.write("</br>")
+
+    }
+
+    }
+
+</script> -->
+
+
+ <!-- <script>
+
+let y =["omar","ahmad","abrar","ayman","oday"];
+
+for( x=0 ; x<=4; x++ ){
+
+    if(y[x][0] =="a"){
+        document.write(y[x])
+        document.write("  ")
+
+    }
+
+
+} -->
+
+
+
+<!-- <script>
+
+    for( x=50; x<=50; x-1 ){
+    
+        document.write(x);
+        document.write("</br>")
+    
+    }
+    
+    
+    
+    
+    </script> 
+    
+
+ -->
+
+<!-- <script>
+
+let x=1;
+do
+{
+    document.write(x);
+    x++;
+}
+while(x<5)
+
+
+
+
+</script> -->
+<!-- 
+<script>
+
+    let x =["A","b","c","d"];
+    let y =[10,20,30,40];
+    let z =["ahmad","omar","oday","abrar"];
+    let w =[]
+    let b;
+
+    for( b=0; b<4 ; b++){
+         
+        w[b]=(  x[b]+y[b]+z[b]   )
+        document.write("<br>")
+
+
+    }
+    document.write(w)
+
+    
+</script> -->
+
+
+<!-- <script>
+ 
+ let x =["ahmad","oday","wwww","abrar","llll"]
+ let y =[10,20,30,40];
+ let w=[]
+
+w=x.concat(y);
+document.write(w);   
+
+
+
+</script> -->
+
+
+
+
+<!-- <script>
+
+let x =["ahmad","omar","oday","abrar"];
+x.sort();
+x.reverse();
+document.write(x)
+
+</script>
+
+ -->
+
+
+
+<!-- 
+
+ <script>
+
+    x=prompt("enter the number");
+    y=prompt("enter the number");
+
+  let sum;
+  dived(x);
+
+    function summation(y){
+        if(y%5==0){
+
+            document.write("true")
+        }
+        else(document.write("false"))
+
+
+    }
+
+
+
+
+
+ </script> -->
+
+
+
+
+ <!-- the numbetr 2  + 5 = 7 -->
+<!--  
+ <script>
+ let x =prompt("entir the first number")
+ let y =prompt( "entir the second number")
+ 
+ oday(x,y)
+
+  function oday(x,y){
+
+   document.write( x+"*"+y+ " =" + x*y)
+   document.write("<br>")
+   document.write(x-y)
+   document.write("<br>")
+   document.write(x/y)
+   document.write("<br>")
+
+  } 
+
+ </script>
+ -->
+
+
+
+ <!-- <script>
+
+   
+
+  let x =["aaa","hhh","yutt","tty"];
+   let t=x.reverse();
+   document.write(t);
+   
+ </script> -->
+ 
+
+<!-- 
+
+ <script>
+
+    let array=[1,6,8,3,5,9,2,7,5];
+ 
+    //  if(array==[4] ){
+       
+    //      document.write( array[x]);
+
+
+    //  }
+    //  else(document.write("iii"))
+    // // document.write(array[4])
+
+
+    for(let x=0;x<=array.length-1;x++){
+
+         if(array[x]==5){
+            
+            document.write(x)
+            document.write("<br>")
+           
+         }
+
+    }
+
+ </script> -->
+ 
+<!--   
+  <script>
+    let x=["bmw","ford","toyta","kia"];
+    w=x.reverse() 
+    let y=0;
+    while(y<=w.length-1){
+      
+        document.write(w[y]);
+      
+        y++
+    }
+  
+
+  </script>
+ -->
+<!-- 
+ <script>
+    let y =[5,10,13,58,33];
+    
+    document.write(big(y));
+
+    function big(x){
+
+        // document.write(x);
+        return Math.max(...x)
+    }
+
+    
+
+ </script> -->
+
+
+
+ 1
+Create a function called subtract
+that takes a single parameter n,
+and return the subtraction of all
+starting from n to 0
+Ex: subtract(2); => 2 - 1 - 0 => 1
+Ex: subtract(5); => 5 - 4 - 3 - 2 - 1 - 0 => -5
+Ex: subtract(9); => 9 - 8 - 7 - 6 - 5 - 4 - 3 - 2 - 1 - 0 => -27
+*/
+
++
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

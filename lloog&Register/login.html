@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <label>email: <input type="email" name="email" id="logemail" /></label>
+        <label>password: <input type="password" name="password" id="password" /></label>
+        <br /><br />
+        <button type="onclick">submit</button>
+      </form>
+      <p id="log"></p>
+
+
+      <script>
+        let users = JSON.parse(localStorage.getItem("user")) || [];
+        
+        
+
+
+        function logSubmit(e) {
+                e.preventDefault();
+            
+            let alaa ="alaa@gmail.com"
+            console.log(e)
+            let mona ="mona@gmail.com"
+            let newEmail = e.target.email.value; 
+            let comparePass =document.getElementById("password");
+            console.log(newEmail);
+            // console.log(users)
+            users.map(e => {
+        console.log(e.Email,"emailllllllllll")
+
+                if(e.newEmail === newEmail.value && e.Password == comparePass.value){
+                    console.log(e.Email)
+
+                  if(e.Email==alaa){
+                    // connsole.log(newEmail);
+                    // window.location("alaa.html")
+                  }  
+                  if(newEmail.value==mona){
+                    // window.location("mona.html")
+                  }      
+                       
+                   
+                }
+                else
+                {
+                     console.log("incoorrect")
+                                     }
+            }
+            )
+            
+
+        event.preventDefault();
+        }
+        const log = document.getElementById('log')
+        const logemail = document.getElementById('logemail')
+        const password = document.getElementById('password')
+        const form = document.getElementById('form');
+        form.addEventListener('submit', logSubmit);
+    </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<style>
+    *{
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.15)),
+    url("../icon/background.avif");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+form {
+    border: 2px  solid gray;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid white;
+    box-shadow: 5px 3px 8px #888888;
+    border-radius: 10px;
+
+
+
+}
+button{
+    background-color:#A07350;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    border-color: #A07350;
+}
+#btnn{
+    margin-bottom: 30px;
+
+}
+table , th , td {
+    border-color:#A07350 ;
+    margin: 0 auto;
+}
+#user {
+    display: flex;
+    justify-content: space-between;
+    border: 2px  solid gray;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./CSS/index.css"> -->
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="container">
+    <div id="user">
+<div id="">
+    HELLO , <span id="name"></span>
+</div>
+<div id="email">
+
+</div>
+    </div>
+    <form>
+        <div>
+            <label>Customer Name:</label>
+            <input type="text" id="inputName"/>
+        </div>
+        <div>
+            <label>Your Order:</label>
+            <select id="select">
+                <option value="dessert">dessert</option>
+                <option value="mainCo">mainCo</option>
+                <option value="aptizer">aptizer</option>
+            </select>
+        </div>
+        <div>
+            <button id="saveData" >ask for cheif</button>
+        </div>
+    </form>
+    <div id="btnn">
+        <button id="remove" >remove content</button>
+        <button id="delete" >delete local storage</button>
+    </div>
+    <div id="list"></div>
+  </div>
+ <!-- <script src="./JS/index.js"></script> -->
+
+</body>
+</html>
+
+    <script>
+
+//-----------------------------------------------------------
+let users =JSON.parse(localStorage.getItem("users"))
+
+users.map(ele => {
+    document.getElementById(`name`).innerHTML=ele.name
+    document.getElementById(`email`).innerHTML=ele.mail
+
+})
+
+//------------------------------------------------------------
+let arr = JSON.parse(localStorage.getItem('array')) 
+
+   let array = arr || []
+
+// ------------------------------------------------
+let btn=document.querySelector("#saveData")
+btn.addEventListener("click", save)
+let name = document.getElementById("inputName").value
+
+function save(event){
+
+let name = document.getElementById('inputName').value
+let select = document.getElementById(`select`).value
+console.log(name)
+    if(select==="dessert"){
+        a="desseret"
+        x="./1.jpg";
+        z=7
+    }
+    if(select==="mainCo"){
+        a="mainCo"
+        x="./2.jpg";
+        z=18
+    }
+    if(select==="aptizer"){
+        a="aptizer"
+        x="./3.jpg";
+        z=10
+    }
+    let obj ={
+    
+       'orderImage'  : x,
+        'customerName': name,
+        'foodType':a,
+        'payment':z
+    }
+    console.log(arr)
+    array.push(obj)
+    console.log(array)
+    console.log(obj)
+localStorage.setItem("array",JSON.stringify(array))
+
+printData()
+     event.preventDefault()
+}
+
+function printData(){
+
+let table1 = '<table border=2>';
+    table1 += '<tr><th>order image</th><th>customer name</th><th>food type</th><th>payment</th></tr>';
+    array.map( ele => {
+        var image = ele.orderImage;
+        var namee = ele.customerName;
+        var foodType = ele.foodType;
+        var payment = ele.payment;
+ 
+        table1 = table1 + '<tr>',
+        table1 = table1 + '<td>'+ `<img src=${image} style="width:150px ;">` + '</td>',
+        table1 = table1 + '<td>' + `${namee}` + '</td>',
+        table1 = table1 + '<td>' + `${foodType}` + '</td>'
+        table1 = table1 + '<td>'  + `${payment}` + '</td>'
+     });  
+     table1 += "</table>"
+
+     
+     document.getElementById("list").innerHTML = table1;
+
+
+}
+//----------------------------------------------
+// remove data in body
+let btnRemove=document.getElementById(`remove`)
+btnRemove.addEventListener(`click`,removetable)
+
+function removetable(){
+
+    document.getElementById("list").innerHTML = "";
+console.log(array)
+
+}
+// //----------------------------------------------
+
+// delete data in local storage
+let removeLocal=document.getElementById(`delete`)
+removeLocal.addEventListener(`click`,deleteLocal)
+
+function deleteLocal(){
+    localStorage.removeItem('array')
+    document.getElementById("list").innerHTML = "";
+
+
+
+}
+//----------------------------------------------
+
+    </script>
+</body>
+</html>

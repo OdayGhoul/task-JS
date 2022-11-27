@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+            <style>
+                   
+                form{
+                    margin-left: 200px;
+                    margin-top: 100px;
+                    border: 2px solid black;
+                    padding: 3%;
+                    width: 200px;
+                }   
+                     
+            </style>
+            <!-----------------------------------------FORM START ------------------------------>
+<form action="./login.html" >
+    <label>first name:</label>
+    <input type="text" id="firstName">
+    <p id="msgname"></p>
+    <br>
+    <label>last name:</label>
+    <input type="text" id="lastName">
+    <p id="msglname"></p>
+    <br>
+    <label>Email</label>
+    <input type="email" id="Email">
+    <p id="emsg"></p>
+    <br>
+    <label>Re-email</label>
+    <input type="email" id="reEmail" >
+    <p id="emailmsg"></p>
+    <br>
+    <label>password</label>
+    <input type="password" id="password">
+    <p id="passmsg" ></p>
+    <br>
+    <label>re password</label>
+    <input type="password" id="Repassword" >
+    <p id="pasmm" ></p>
+    <br>
+    <label >phonenumber</label>
+    <input type="text" id="phone" >
+    <p id="phoneNumber" ></p>
+    <br><br>
+    <button id="submit" onclick="register()" >submit</button>
+            <!------------------------------------------FORM END  --------------------------------->
+
+
+              <script>
+                  let arrayRegester=JSON.parse(localStorage.getItem("user")) || [];
+                  
+                  let user =[]
+                  let objRegester={};
+                  let FN,LN,EM,PA,PH;
+                function register(){
+                    // event.preventDefault();
+                  
+
+                    Firstname=document.getElementById("firstName").value
+                    //console.log(Firstname)
+                    Lastname=document.getElementById("lastName").value
+                    Email=document.getElementById("Email").value
+                    ReEmail=document.getElementById("reEmail").value
+                    Password=document.getElementById("password").value
+                   // console.log(Password);
+                    Repassword=document.getElementById("Repassword").value
+                    Phone=document.getElementById("phone").value
+
+
+                    if(!Firstname.match(/^[a-z ,.'-]+$/i) ){
+                    document.getElementById("msgname").innerHTML="dont enter number in your name"
+                                                                                                                // we put it in wrong condtion  
+                    event.preventDefault();   
+                   }
+                   else {FN=Firstname;}
+                     if(!Lastname.match(/^[a-z ,.'-]+$/i)){
+                      document.getElementById("msglname").innerHTML="dont enter number in your name"  
+                   }  else {LN=Lastname;}
+                   if(!Email.match("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")){
+                        document.getElementById("emsg").innerHTML="fffffff"
+                   }  
+                        if (ReEmail!=Email){
+                           document.getElementById("emailmsg").innerHTML="kkkddddkk" 
+                        }   else {EM=Email;}         
+
+                        if(!Password.match( /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/)){
+
+                            document.getElementById("passmsg").innerHTML="oooooo"
+                        }
+                         if(Repassword!=Password){
+                            document.getElementById("pasmm").innerHTML="xxxxxxxx"
+                         }else {PA=Password;}
+
+                         //PHONE NOTCONTAIN CONDETION               
+                         objRegester={
+                            FirstName:FN,
+                            LastName:LN,
+                            Email:EM,
+                            Password:PA,
+                            phone:PH
+                         }
+                         arrayRegester.push(objRegester);
+                         localStorage.setItem("user",JSON.stringify(arrayRegester));
+                }
+                    // localStorage.setItem("user",JSON.stringify(arrayRegester));
+                    console.log(arrayRegester);
+                
+
+
+
+
+
+
+              </script>
+</form>
+</body>
+</html>

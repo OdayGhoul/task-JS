@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        form {
+            border: 1px solid black;
+            justify-items: center;
+
+            margin-left: 300px;
+            margin-top: 250px;
+            background-color: aquamarine;
+            width: 200px;
+            padding: 3%;
+            border-radius: 30px;
+            font-weight: bolder;
+
+        }
+
+        #register {
+            margin: 0px 50px;
+        }
+    </style>
+
+
+    <form action=>
+        <label>user name</label>
+        <input type="text" id="username">
+        <p id="msgname"></p>
+        <label>email</label>
+        <input type="email" id="email">
+        <label>password</label>
+        <input type="password" id="password">
+        <label>phone number</label>
+        <input type="text" id="phonenumber">
+        <br><br>
+        <button id="register" onclick="check()">register</button>
+    </form>
+
+
+
+    <script>
+        let name, email, password, phone;
+
+        let users = []
+        let user_obj = {}
+
+
+
+        // function dusu() {
+
+
+        //     localStorage.setItem("username", JSON.stringify(name.value))
+        //     localStorage.setItem("email", JSON.stringify(email.value))
+        //     localStorage.setItem("password", JSON.stringify(password.value))
+        //     localStorage.setItem("phone", JSON.stringify(phone.value))
+        // }
+
+
+
+       
+
+        function check() {
+            
+            event.preventDefault();
+
+
+            let na_us,em_us,pas_us,ph_us
+
+            name_user = document.getElementById("username").value;
+            console.log(name_user)
+            email = document.getElementById("email").value;
+            console.log(email)
+            password = document.getElementById("password").value;
+            console.log(password)
+            phone = document.getElementById("phonenumber").value;
+            console.log(phone)
+
+
+            if( !name_user.match(/[^0-9]/)   ){  
+               // console.log("dd")
+              document.getElementById("msgname").innerHTML="dont enter number in your name"  
+            }else{
+                na_us=   name_user
+        
+            }
+            // regex for email
+            if( !email.match(....)   ){  
+                console.log("dd")
+              document.getElementById("msgname").innerHTML="dont enter email in your email"  
+            }else{
+              
+                em_us=    email
+            }
+      
+            user_obj={
+                name_user:a_us,
+                email:em_us,
+                
+            }
+
+             
+
+            // after finish every thing
+                //  user_obj = {user_name:na_us, email_user:em_us,....}
+
+            // after add for obj you have push it to the array
+            // user.push(user_obj)
+
+
+            // you have to save your array of object into local storage
+            // dusu(user) 
+
+            
+
+            // email,phone, pass and or if
+            //obj {user_n:name_user, user_em:email....}
+            //user.push(user_obj)
+
+        }
+
+
+    </script>
+    <!-- // 5- password with confirmation(two inputs)
+ 
+    // 1- check if the name has just letters.
+    // 2- determine the birth date input and check for it in the right way
+    // 3-check the email structure by regular expression and if the structure has an error use  the Error handling 
+    // 4- check if the two emails are the same or not.
+    // 5- password :
+    // a- start with a capital letter
+    // b- having at least two numbers
+    // c- at least one special character or symbol
+    // d- check if the pass confirmation is right
+    // e-password length should be between 8 and 32
+    // 6-mobile number should be 10 numbers -->
+
+</body>
+
+</html>
